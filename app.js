@@ -6,7 +6,6 @@ const $ = (s, r = document) => r.querySelector(s);
 const $$ = (s, r = document) => Array.from(r.querySelectorAll(s));
 
 const state = {
-  depth: localStorage.getItem("depth") === "true",
   activePhrase: null,
   alignIdx: 0,
   baPlaying: false,
@@ -506,7 +505,11 @@ function playBackAbsorption() {
     setTimeout(() => {
       pEl.classList.add("pulsing");
       const path = paths[i];
-      if (path) path.classList.add("flowing");
+      if (path) {
+        path.classList.add("flowing");
+        // Animate to 0 — class rule is overridden by drawBASvg's inline style
+        path.style.strokeDashoffset = "0";
+      }
     }, delay);
     setTimeout(() => {
       if (absorbedLines[i]) absorbedLines[i].classList.add("ready");
@@ -605,7 +608,6 @@ function buildNavDots() {
     const btn = document.createElement("button");
     btn.className = "nav-dot";
     btn.dataset.ch = ch.dataset.ch;
-    if (ch.classList.contains("depth-only")) btn.classList.add("depth-only");
     btn.innerHTML = `<span class="lbl">${ch.dataset.nav}</span>`;
     btn.addEventListener("click", () => {
       window.scrollTo({ top: ch.offsetTop - 20, behavior: "smooth" });
@@ -615,7 +617,7 @@ function buildNavDots() {
 }
 
 function updateNavDots() {
-  const chapters = $$(".chapter").filter(c => !c.classList.contains("depth-only") || state.depth);
+  const chapters = $$(".chapter");
   const mid = window.scrollY + window.innerHeight * 0.4;
   let active = chapters[0];
   for (const ch of chapters) {
@@ -624,7 +626,6 @@ function updateNavDots() {
   $$(".nav-dot").forEach(d => {
     const ch = d.dataset.ch;
     d.classList.toggle("active", active && active.dataset.ch === ch);
-    if (d.classList.contains("depth-only")) d.style.display = state.depth ? "" : "none";
   });
 }
 
@@ -674,22 +675,16 @@ function setupReveals() {
     entries.forEach(e => {
       if (e.isIntersecting && !baAutoPlayed && !state.baPlaying && !state.baDone) {
         baAutoPlayed = true;
-        setTimeout(() => playBackAbsorption(), 600);
+        setTimeout(() => playBackAbsorption(), 500);
       }
     });
-  }, { threshold: 0.35 });
-  const baSec = $(".chapter-ba");
+  }, { threshold: 0.15, rootMargin: "-10% 0px -10% 0px" });
+  const baSec = document.querySelector(".chapter-ba");
   if (baSec) baIo.observe(baSec);
 }
 
-/* ═══ DEPTH MODE ═══ */
-function setDepth(on) {
-  state.depth = on;
-  localStorage.setItem("depth", on);
-  $("#depth-switch").classList.toggle("on", on);
-  document.body.classList.toggle("depth", on);
-  updateNavDots();
-}
+/* ═══ CH7 · BA AUTOPLAY — no-op stub kept for compatibility ═══ */
+function updateBAScroll() { /* intentionally empty — autoplay handled above */ }
 
 /* ═══ INIT ═══ */
 function init() {
@@ -702,15 +697,8 @@ function init() {
   renderAttribution();
 
   buildNavDots();
-  setDepth(state.depth);
 
-  $("#depth-switch").addEventListener("click", () => setDepth(!state.depth));
   $("#drawer-close").addEventListener("click", closeDrawer);
-  $("#ba-play").addEventListener("click", () => {
-    if (state.baDone) { resetBackAbsorption(); setTimeout(playBackAbsorption, 200); }
-    else if (!state.baPlaying) playBackAbsorption();
-  });
-  $("#ba-reset").addEventListener("click", () => { resetBackAbsorption(); setTimeout(playBackAbsorption, 200); });
   document.addEventListener("keydown", e => { if (e.key === "Escape") closeDrawer(); });
 
   // Hinge aside → scroll to χρηστότητα sub-section in the tell chapter
@@ -729,18 +717,20 @@ function init() {
   window.addEventListener("scroll", () => {
     updateProgress();
     updateNavDots();
+    updateBAScroll();
   }, { passive: true });
 
   // Redraw SVG connectors on resize
   let rt;
   window.addEventListener("resize", () => {
     clearTimeout(rt);
-    rt = setTimeout(() => drawBASvg(), 120);
+    rt = setTimeout(() => { drawBASvg(); updateBAScroll(); }, 120);
   });
 
   setupReveals();
   updateProgress();
   updateNavDots();
+  updateBAScroll();
 
   // Initial SVG draw once fonts have had a moment to settle
   setTimeout(() => drawBASvg(), 400);

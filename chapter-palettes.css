@@ -1,0 +1,347 @@
+/* =========================================================================
+   Chapter Palettes — narrative rhythm pass
+   Each chapter gets its own world: background, ink, accents, motif.
+   Loaded AFTER styles.css so these overrides win.
+   ========================================================================= */
+
+/* ---- Global chapter framing ---- */
+.chapter {
+  /* soft seam between chapters */
+  position: relative;
+  isolation: isolate;
+}
+/* Subtle curtain seam fading from previous chapter's bg into this one */
+.chapter::before {
+  content: "";
+  position: absolute; top: 0; left: 0; right: 0;
+  height: 140px;
+  background: linear-gradient(180deg, var(--seam-from, transparent) 0%, transparent 100%);
+  pointer-events: none;
+  z-index: 0;
+}
+.chapter > * { position: relative; z-index: 1; }
+
+/* =========================================================================
+   CH 1 — HERO · deep graphite. Dramatic open.
+   ========================================================================= */
+.chapter-hero {
+  background: radial-gradient(ellipse at 50% 30%, oklch(0.22 0.012 60) 0%, oklch(0.14 0.008 60) 60%, oklch(0.10 0.008 60) 100%);
+  color: oklch(0.96 0.008 85);
+  --seam-from: transparent;
+}
+.chapter-hero .eyebrow { color: oklch(0.70 0.04 60); }
+.chapter-hero h1 { color: oklch(0.98 0.008 85); }
+.chapter-hero h1 .em em { color: oklch(0.85 0.09 60); font-style: italic; }
+.chapter-hero .dek { color: oklch(0.78 0.012 85); }
+.chapter-hero .scroll-hint { color: oklch(0.62 0.02 85); }
+.chapter-hero .scroll-arrow,
+.chapter-hero .scroll-arrow::before,
+.chapter-hero .scroll-arrow::after { border-color: oklch(0.62 0.02 85); background: oklch(0.62 0.02 85); }
+
+/* Starfield-ish subtle texture */
+.chapter-hero::after {
+  content: "";
+  position: absolute; inset: 0;
+  background-image:
+    radial-gradient(1px 1px at 20% 30%, oklch(1 0 0 / 0.10), transparent 50%),
+    radial-gradient(1px 1px at 80% 70%, oklch(1 0 0 / 0.06), transparent 50%),
+    radial-gradient(1px 1px at 60% 20%, oklch(1 0 0 / 0.08), transparent 50%),
+    radial-gradient(1px 1px at 30% 85%, oklch(1 0 0 / 0.05), transparent 50%),
+    radial-gradient(1px 1px at 90% 45%, oklch(1 0 0 / 0.07), transparent 50%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* =========================================================================
+   CH 2 — CLAIM · warm cream (current). Editorial. Intimate.
+   Transition: deep graphite → cream (sharp cut with bleed).
+   ========================================================================= */
+.chapter-claim {
+  background:
+    linear-gradient(180deg, oklch(0.12 0.008 60) 0%, oklch(0.12 0.008 60) 48px, oklch(0.975 0.012 85) 48px, oklch(0.975 0.012 85) 100%);
+  color: oklch(0.18 0.01 85);
+  padding-top: 180px !important;
+}
+.chapter-claim::before { display: none; } /* own bleed handled via gradient */
+.chapter-claim .claim-kicker,
+.chapter-claim .claim-lede,
+.chapter-claim .claim-tail { color: oklch(0.25 0.01 85); }
+.chapter-claim .claim-equals {
+  font-size: clamp(72px, 10vw, 128px);
+  color: oklch(0.68 0.09 40);
+  font-family: var(--serif);
+  font-weight: 300;
+}
+
+/* =========================================================================
+   CH 3 — HINGE · midnight indigo. The thread is the hero.
+   ========================================================================= */
+.chapter-hinge {
+  background: linear-gradient(180deg, oklch(0.18 0.035 265) 0%, oklch(0.13 0.04 265) 100%);
+  color: oklch(0.94 0.01 265);
+  --seam-from: oklch(0.975 0.012 85);
+}
+.chapter-hinge::before {
+  /* seam curtain: cream → midnight */
+  background: linear-gradient(180deg, oklch(0.975 0.012 85) 0%, oklch(0.18 0.035 265) 100%);
+  height: 160px;
+}
+.chapter-hinge .hinge-kicker,
+.chapter-hinge .hinge-foot { color: oklch(0.72 0.03 265); }
+.chapter-hinge .hinge-h { color: oklch(0.98 0.01 265); }
+.chapter-hinge .hinge-h em { color: oklch(0.82 0.11 70); }
+.chapter-hinge .hinge-dek { color: oklch(0.82 0.015 265); }
+/* lift the thread above the dark bg */
+.chapter-hinge .hinge-thread {
+  filter: drop-shadow(0 20px 40px oklch(0 0 0 / 0.35));
+}
+
+/* Hinge aside — translucent plaque on dark */
+.chapter-hinge .hinge-aside {
+  background: oklch(0.22 0.035 265 / 0.6);
+  border-color: oklch(0.40 0.05 265 / 0.4);
+  color: oklch(0.92 0.01 265);
+}
+.chapter-hinge .hinge-aside summary .ha-head { color: oklch(0.96 0.01 265); }
+.chapter-hinge .hinge-aside summary .ha-teaser { color: oklch(0.75 0.03 265); }
+.chapter-hinge .hinge-aside .ha-content { color: oklch(0.88 0.015 265); }
+.chapter-hinge .hinge-aside .ha-content em { color: oklch(0.95 0.01 265); }
+.chapter-hinge .hinge-aside .ha-lede { color: oklch(0.88 0.015 265); }
+.chapter-hinge .hinge-aside .ha-verdict { color: oklch(0.95 0.01 265); }
+
+/* =========================================================================
+   CH 4 — MOSAIC · bright paper white. Editorial spread. Color pops.
+   ========================================================================= */
+.chapter-mosaic {
+  background: oklch(0.995 0.002 85);
+  color: oklch(0.16 0.01 85);
+  --seam-from: oklch(0.13 0.04 265);
+}
+.chapter-mosaic::before {
+  background: linear-gradient(180deg, oklch(0.13 0.04 265) 0%, oklch(0.995 0.002 85) 100%);
+  height: 180px;
+}
+.chapter-mosaic .mosaic-head h2 {
+  color: oklch(0.14 0.01 85);
+}
+.chapter-mosaic .mosaic {
+  background: oklch(1 0 0);
+  border: 1px solid oklch(0.92 0.005 85);
+  box-shadow: 0 30px 80px oklch(0 0 0 / 0.08), 0 2px 10px oklch(0 0 0 / 0.04);
+}
+.chapter-mosaic .mosaic-body.greek {
+  font-size: clamp(24px, 2.4vw, 34px);
+  line-height: 1.7;
+}
+
+/* =========================================================================
+   CH 5 — ALIGNMENT (depth-only) · cool pale slate. Utility mode.
+   ========================================================================= */
+.chapter-align {
+  background: oklch(0.96 0.006 235);
+  color: oklch(0.18 0.01 235);
+  --seam-from: oklch(0.995 0.002 85);
+}
+.chapter-align::before {
+  background: linear-gradient(180deg, oklch(0.995 0.002 85) 0%, oklch(0.96 0.006 235) 100%);
+  height: 120px;
+}
+
+/* =========================================================================
+   CH 6 — TELL · warm oxblood. The word glows. Forensic drama.
+   Already has its own dark styling; re-skin to warm not cool.
+   ========================================================================= */
+.chapter-tell {
+  background: radial-gradient(ellipse at 50% 35%, oklch(0.25 0.06 30) 0%, oklch(0.17 0.04 30) 60%, oklch(0.13 0.03 30) 100%);
+  color: oklch(0.94 0.015 30);
+  --seam-from: oklch(0.96 0.006 235);
+}
+.chapter-tell::before {
+  background: linear-gradient(180deg, oklch(0.96 0.006 235) 0%, oklch(0.17 0.04 30) 100%);
+  height: 180px;
+}
+.chapter-tell .tell-kicker { color: oklch(0.72 0.09 30); }
+.chapter-tell .tell-h { color: oklch(0.98 0.01 30); }
+.chapter-tell .tell-h em { color: oklch(0.82 0.13 45); }
+.chapter-tell #tell-greek,
+.chapter-tell #tell-greek-2 {
+  color: oklch(0.92 0.14 55);
+  text-shadow: 0 0 40px oklch(0.70 0.15 50 / 0.45), 0 0 80px oklch(0.60 0.13 45 / 0.28);
+}
+
+/* =========================================================================
+   CH 7 — BACK-ABSORPTION · parchment / sepia. Archival.
+   ========================================================================= */
+.chapter-ba {
+  background:
+    linear-gradient(180deg, oklch(0.95 0.018 75) 0%, oklch(0.93 0.022 70) 100%);
+  color: oklch(0.22 0.012 65);
+  --seam-from: oklch(0.13 0.03 30);
+}
+.chapter-ba::before {
+  background: linear-gradient(180deg, oklch(0.13 0.03 30) 0%, oklch(0.95 0.018 75) 100%);
+  height: 200px;
+}
+/* subtle paper grain */
+.chapter-ba::after {
+  content: "";
+  position: absolute; inset: 0;
+  background-image:
+    radial-gradient(1px 1px at 12% 18%, oklch(0.30 0.015 65 / 0.06), transparent 60%),
+    radial-gradient(1px 1px at 78% 42%, oklch(0.30 0.015 65 / 0.05), transparent 60%),
+    radial-gradient(1.5px 1.5px at 34% 78%, oklch(0.30 0.015 65 / 0.04), transparent 60%),
+    radial-gradient(1px 1px at 62% 88%, oklch(0.30 0.015 65 / 0.05), transparent 60%),
+    radial-gradient(1px 1px at 88% 22%, oklch(0.30 0.015 65 / 0.04), transparent 60%);
+  pointer-events: none;
+  opacity: 0.7;
+  z-index: 0;
+}
+.chapter-ba .ba-card {
+  background: oklch(0.98 0.012 75);
+  border-color: oklch(0.82 0.02 70);
+  box-shadow: 0 20px 50px oklch(0.25 0.02 65 / 0.12), 0 2px 6px oklch(0.25 0.02 65 / 0.08);
+}
+.chapter-ba .ba-explain em { color: oklch(0.22 0.012 65); }
+
+/* Codices panel sits inside CH 7 — dress it as tagged specimens */
+.chapter-ba .codex-card {
+  background: oklch(0.985 0.012 75);
+  border-color: oklch(0.84 0.02 70);
+}
+.chapter-ba .codex-quote {
+  background: oklch(0.95 0.025 70);
+  border-left-color: oklch(0.55 0.10 55);
+}
+
+/* =========================================================================
+   CH 8 — TIMELINE · deep midnight. Centuries laid out.
+   ========================================================================= */
+.chapter-tl {
+  background: linear-gradient(180deg, oklch(0.14 0.025 255) 0%, oklch(0.11 0.025 260) 100%);
+  color: oklch(0.92 0.012 255);
+  --seam-from: oklch(0.93 0.022 70);
+}
+.chapter-tl::before {
+  background: linear-gradient(180deg, oklch(0.93 0.022 70) 0%, oklch(0.14 0.025 255) 100%);
+  height: 200px;
+}
+.chapter-tl::after {
+  content: "";
+  position: absolute; inset: 0;
+  background-image:
+    radial-gradient(1px 1px at 15% 25%, oklch(1 0 0 / 0.09), transparent 50%),
+    radial-gradient(1px 1px at 72% 55%, oklch(1 0 0 / 0.07), transparent 50%),
+    radial-gradient(1px 1px at 45% 80%, oklch(1 0 0 / 0.06), transparent 50%),
+    radial-gradient(1px 1px at 88% 15%, oklch(1 0 0 / 0.05), transparent 50%),
+    radial-gradient(1px 1px at 25% 68%, oklch(1 0 0 / 0.07), transparent 50%);
+  pointer-events: none;
+  z-index: 0;
+}
+.chapter-tl .eyebrow { color: oklch(0.70 0.04 255); }
+.chapter-tl h2 { color: oklch(0.97 0.012 255); }
+.chapter-tl p { color: oklch(0.80 0.015 255); }
+
+/* =========================================================================
+   CH 9 — EVIDENCE · stark white. Minimal.
+   ========================================================================= */
+.chapter-claims {
+  background: oklch(1 0 0);
+  color: oklch(0.16 0.01 85);
+  --seam-from: oklch(0.11 0.025 260);
+}
+.chapter-claims::before {
+  background: linear-gradient(180deg, oklch(0.11 0.025 260) 0%, oklch(1 0 0) 100%);
+  height: 200px;
+}
+
+/* =========================================================================
+   CH 10 — SOURCES · quiet cream. Closing.
+   ========================================================================= */
+.chapter-sources {
+  background: oklch(0.975 0.012 85);
+  color: oklch(0.18 0.01 85);
+  --seam-from: oklch(1 0 0);
+}
+.chapter-sources::before {
+  background: linear-gradient(180deg, oklch(1 0 0) 0%, oklch(0.975 0.012 85) 100%);
+  height: 140px;
+}
+
+/* =========================================================================
+   Chrome adjustments — topnav/rail adapt to each chapter
+   ========================================================================= */
+/* Use a tinted translucent nav that reads on any bg */
+.topnav { background: oklch(0.12 0.01 85 / 0.30); }
+.topnav .brand,
+.topnav .mode-switch,
+.topnav .mode-switch span { color: oklch(0.98 0.01 85); }
+.topnav .brand em { color: oklch(0.78 0.02 85); }
+.topnav.scrolled { border-bottom-color: oklch(1 0 0 / 0.10); }
+
+/* Rail: readable on any bg */
+.rail-inner {
+  background: oklch(0.12 0.01 85 / 0.55);
+  border-color: oklch(1 0 0 / 0.10);
+  backdrop-filter: saturate(160%) blur(16px);
+  -webkit-backdrop-filter: saturate(160%) blur(16px);
+}
+.nav-dot::before { background: oklch(1 0 0 / 0.45); }
+.nav-dot:hover::before { background: oklch(1 0 0 / 0.85); }
+.nav-dot.active::before { background: oklch(1 0 0); }
+.nav-dot .lbl {
+  background: oklch(0.14 0.01 85 / 0.92);
+  color: oklch(0.98 0.01 85);
+  border-color: oklch(1 0 0 / 0.08);
+}
+
+/* =========================================================================
+   Typographic rhythm — vary scale between chapters so none feels the same
+   ========================================================================= */
+.chapter-hero h1 {
+  font-size: clamp(44px, 7.5vw, 108px);
+  line-height: 0.98;
+  letter-spacing: -0.03em;
+}
+.chapter-claim .claim-lede {
+  font-size: clamp(28px, 3.6vw, 48px);
+  line-height: 1.18;
+  letter-spacing: -0.015em;
+}
+.chapter-hinge .hinge-h {
+  font-size: clamp(30px, 4.4vw, 60px);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+.chapter-mosaic .mosaic-head h2 {
+  font-size: clamp(36px, 5.2vw, 72px);
+  line-height: 1.05;
+  letter-spacing: -0.025em;
+}
+.chapter-tell .tell-h {
+  font-size: clamp(30px, 4vw, 54px);
+  line-height: 1.15;
+  letter-spacing: -0.015em;
+}
+.chapter-tell #tell-greek,
+.chapter-tell #tell-greek-2 {
+  font-size: clamp(64px, 9vw, 128px);
+  letter-spacing: -0.01em;
+  line-height: 1;
+}
+.chapter-ba h2,
+.chapter-tl h2,
+.chapter-claims h2,
+.chapter-sources h2 {
+  font-size: clamp(32px, 4.2vw, 56px);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+
+/* Scroll progress gets a warm accent */
+.scroll-progress { background: oklch(0.75 0.15 50); }
+
+/* Prevent huge padding eating mobile */
+@media (max-width: 720px) {
+  .chapter { padding-top: 96px; padding-bottom: 96px; }
+  .chapter-claim { padding-top: 130px !important; }
+}

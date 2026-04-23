@@ -8,16 +8,13 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,500;0,8..60,600;1,8..60,400&family=Gentium+Plus:ital,wght@0,400;0,700;1,400&family=Frank+Ruhl+Libre:wght@300;400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="chapter-palettes.css">
 </head>
 <body>
 
 <nav class="topnav">
   <div class="topnav-inner">
     <div class="brand">Romans 3 · <em>Tracing a Catena</em></div>
-    <div class="mode-switch">
-      <span>Depth</span>
-      <button class="switch" id="depth-switch" aria-label="Toggle depth mode"></button>
-    </div>
   </div>
   <div class="scroll-progress" id="scroll-progress"></div>
 </nav>
@@ -49,8 +46,8 @@
 <!-- ═══════════════ CHAPTER 2 — THE FIRST CLAIM ═══════════════ -->
 <section class="chapter chapter-claim" data-nav="The psalm" data-ch="2">
   <div class="claim-stage">
-    <div class="claim-kicker reveal">First, the easy part.</div>
-    <div class="claim-lede reveal">Romans 3:10–12 really is Psalm 14.</div>
+    <div class="claim-kicker reveal">First, the straightforward part.</div>
+    <div class="claim-lede reveal">Romans 3:10–12 follows Psalm 14 closely.</div>
     <div class="claim-pair">
       <div class="claim-col reveal" data-delay="100">
         <div class="col-head">Romans 3:12</div>
@@ -64,7 +61,7 @@
         <div class="col-en">Verbatim. Same Greek words, same order.</div>
       </div>
     </div>
-    <p class="claim-tail reveal">The first four phrases of Paul's paragraph walk verse by verse through Psalm 14. If Paul had stopped there, this would be a quotation, nothing more.</p>
+    <p class="claim-tail reveal">The first four phrases of Paul's paragraph draw on Psalm 14 — with Paul's own framing line (<span class="greek">οὐκ ἔστιν δίκαιος οὐδὲ εἷς</span>) opening the paragraph. If Paul had stopped there, this would read as a sustained quotation, nothing more.</p>
   </div>
 </section>
 
@@ -97,7 +94,7 @@
 
       <div class="ha-content">
         <p class="ha-lede">
-          Psalm 14 and Psalm 53 are Hebrew twins — almost the same psalm, copied twice into the Psalter. Psalm 53 sits in what scholars call the <em>Elohistic Psalter</em> and swaps the divine name <em>YHWH</em> for the more generic <em>Elohim</em>, with a reworked judgment line about God scattering the bones of the besieger. They look nearly identical in the verses Paul quotes — so <em>which one</em> is he on? The answer turns out to be hiding in a single word: <a href="#tell-greek-2" class="ha-link" id="ha-to-tell">χρηστότητα</a>.
+          Psalm 14 and Psalm 53 are a doublet — nearly the same psalm preserved twice in the Hebrew Psalter. Psalm 14 sits in Book I; Psalm 53 sits in the <em>Elohistic Psalter</em> (Pss 42–83), which tends to prefer the divine name <em>Elohim</em> over <em>YHWH</em>. Both open identically, so the divine-name difference doesn't appear in verse 1 — it shows up later, and the psalms end differently too. Two fingerprints point to <em>Psalm 14</em> as the one Paul has in hand: the Greek word he uses, <a href="#tell-greek-2" class="ha-link" id="ha-to-tell">χρηστότητα</a>, and the expanded text tradition that later absorbs his catena.
         </p>
 
         <div class="ha-compare">
@@ -106,58 +103,71 @@
           <div class="ha-col ha-col-head"><div class="ha-ps-title">Psalm 14</div><div class="ha-ps-sub">MT numbering · "YHWH" psalm</div></div>
           <div class="ha-col ha-col-head"><div class="ha-ps-title">Psalm 53</div><div class="ha-ps-sub">MT numbering · "Elohim" psalm</div></div>
 
-          <!-- Hebrew row -->
-          <div class="ha-rowlabel"><span class="ha-lang">Hebrew</span><span class="ha-lang-note">Masoretic Text</span></div>
+          <!-- Divine-name row -->
+          <div class="ha-rowlabel"><span class="ha-lang">Divine name</span><span class="ha-lang-note">Where the psalms diverge on what to call God</span></div>
           <div class="ha-col ha-textcol">
-            <div class="ha-src-ref">Psalm 14:1</div>
-            <div class="ha-text hebrew">אָמַר נָבָל בְּלִבּוֹ אֵין <mark class="ha-hl ha-hl-name">אֱלֹהִים</mark></div>
-            <div class="ha-en">The fool says in his heart, "There is no <em>God</em>."</div>
-            <div class="ha-text hebrew">הִשְׁחִיתוּ הִתְעִיבוּ עֲלִילָה אֵין עֹשֵׂה־טוֹב</div>
-            <div class="ha-en">They act corruptly, their deeds are vile — no one does good.</div>
+            <div class="ha-src-ref">Psalm 14:4</div>
+            <div class="ha-text hebrew">…וְאֶת־<mark class="ha-hl ha-hl-name">יְהוָה</mark> לֹא קָרָאוּ</div>
+            <div class="ha-en">…and they have not called on <em>YHWH</em>.</div>
+            <div class="ha-src-ref">Psalm 14:7</div>
+            <div class="ha-text hebrew">בְּשׁוּב <mark class="ha-hl ha-hl-name">יְהוָה</mark> שְׁבוּת עַמּוֹ</div>
+            <div class="ha-en">When <em>YHWH</em> restores his people…</div>
           </div>
           <div class="ha-col ha-textcol">
-            <div class="ha-src-ref">Psalm 53:2</div>
-            <div class="ha-text hebrew">אָמַר נָבָל בְּלִבּוֹ אֵין <mark class="ha-hl ha-hl-name">אֱלֹהִים</mark></div>
-            <div class="ha-en">The fool says in his heart, "There is no <em>God</em>."</div>
-            <div class="ha-text hebrew">הִשְׁחִיתוּ וְהִתְעִיבוּ <mark class="ha-hl ha-hl-swap">עָוֶל</mark> אֵין עֹשֵׂה־טוֹב</div>
-            <div class="ha-en">They act corruptly, their <em>injustice</em> is vile — no one does good. <span class="ha-diff">↑ different word</span></div>
-          </div>
-
-          <!-- Greek row -->
-          <div class="ha-rowlabel"><span class="ha-lang">Greek</span><span class="ha-lang-note">Septuagint (LXX)</span></div>
-          <div class="ha-col ha-textcol">
-            <div class="ha-src-ref">LXX Psalm 13:1</div>
-            <div class="ha-text greek">εἶπεν ἄφρων ἐν καρδίᾳ αὐτοῦ Οὐκ ἔστι θεός· διέφθειραν καὶ ἐβδελύχθησαν ἐν ἐπιτηδεύμασιν, οὐκ ἔστι ποιῶν <mark class="ha-hl ha-hl-key">χρηστότητα</mark></div>
-            <div class="ha-en">There is no God… they are corrupt, their deeds are abominable, no one is doing <em>kindness</em>.</div>
-            <div class="ha-arrow">↑ this is Paul's word</div>
-          </div>
-          <div class="ha-col ha-textcol">
-            <div class="ha-src-ref">LXX Psalm 52:2</div>
-            <div class="ha-text greek">εἶπεν ἄφρων ἐν καρδίᾳ αὐτοῦ Οὐκ ἔστι θεός· διεφθάρησαν καὶ ἐβδελύχθησαν ἐν ἀνομίαις, οὐκ ἔστι ποιῶν <mark class="ha-hl ha-hl-swap">ἀγαθόν</mark></div>
-            <div class="ha-en">There is no God… they are corrupt, their deeds are abominable <em>in lawlessness</em>, no one is doing <em>good</em>.</div>
-            <div class="ha-arrow ha-arrow-neg">≠ different word in the twin</div>
+            <div class="ha-src-ref">Psalm 53:5</div>
+            <div class="ha-text hebrew">…וְ<mark class="ha-hl ha-hl-swap">אֱלֹהִים</mark> לֹא קָרָאוּ</div>
+            <div class="ha-en">…and they have not called on <em>Elohim</em>. <span class="ha-diff">↑ YHWH → Elohim</span></div>
+            <div class="ha-src-ref">Psalm 53:7</div>
+            <div class="ha-text hebrew">בְּשׁוּב <mark class="ha-hl ha-hl-swap">אֱלֹהִים</mark> שְׁבוּת עַמּוֹ</div>
+            <div class="ha-en">When <em>Elohim</em> restores his people…</div>
           </div>
 
-          <!-- Key difference row -->
-          <div class="ha-rowlabel"><span class="ha-lang">What differs</span></div>
+          <!-- Structural divergence row -->
+          <div class="ha-rowlabel"><span class="ha-lang">Structural</span><span class="ha-lang-note">Where content diverges, not just wording</span></div>
+          <div class="ha-col ha-textcol">
+            <div class="ha-src-ref">Psalm 14:5</div>
+            <div class="ha-text hebrew">שָׁם פָּחֲדוּ פָחַד</div>
+            <div class="ha-en">There they are in great fear — where there was no fear.</div>
+          </div>
+          <div class="ha-col ha-textcol">
+            <div class="ha-src-ref">Psalm 53:6</div>
+            <div class="ha-text hebrew"><mark class="ha-hl ha-hl-swap">אֱלֹהִים פִּזַּר עַצְמוֹת חֹנָךְ</mark></div>
+            <div class="ha-en"><em>Elohim scatters the bones of the one who encamps against you.</em> <span class="ha-diff">↑ a reworked judgment line</span></div>
+          </div>
+
+          <!-- Greek row — word-level fingerprint -->
+          <div class="ha-rowlabel"><span class="ha-lang">Paul's word</span><span class="ha-lang-note">Septuagint (LXX)</span></div>
+          <div class="ha-col ha-textcol">
+            <div class="ha-src-ref">LXX Psalm 13:3</div>
+            <div class="ha-text greek">…οὐκ ἔστι ποιῶν <mark class="ha-hl ha-hl-key">χρηστότητα</mark></div>
+            <div class="ha-en">…no one is doing <em>kindness</em>.</div>
+            <div class="ha-arrow">↑ this is Paul's word (Rom 3:12)</div>
+          </div>
+          <div class="ha-col ha-textcol">
+            <div class="ha-src-ref">LXX Psalm 52:4</div>
+            <div class="ha-text greek">…οὐκ ἔστι ποιῶν <mark class="ha-hl ha-hl-swap">ἀγαθόν</mark></div>
+            <div class="ha-en">…no one is doing <em>good</em>.</div>
+            <div class="ha-arrow ha-arrow-neg">≠ different Greek word in the doublet</div>
+          </div>
+
+          <!-- Manuscript history row -->
+          <div class="ha-rowlabel"><span class="ha-lang">Manuscript history</span><span class="ha-lang-note">Which psalm later scribes attached Paul's catena to</span></div>
           <div class="ha-col ha-diffcell">
             <ul>
-              <li><strong>YHWH</strong> is used throughout the surrounding psalms.</li>
-              <li>Verse 5 reads: "they are in great fear where no fear was."</li>
-              <li>The LXX verse 3 was later <em>expanded</em> to include Paul's full catena.</li>
+              <li>The Greek text of Psalm 13 (= MT 14) was later <em>expanded</em> in some witnesses to absorb Paul's full catena.</li>
+              <li>That expansion appears inline in Codex Sinaiticus and in the margin of Codex Vaticanus with a scribal note.</li>
             </ul>
           </div>
           <div class="ha-col ha-diffcell">
             <ul>
-              <li><strong>Elohim</strong> replaces YHWH — a trait of the Elohistic Psalter.</li>
-              <li>Verse 5 rewrites the judgment: God <em>scatters the bones</em> of the besieger.</li>
-              <li>The LXX of Psalm 52 was never expanded with Paul's catena.</li>
+              <li>No comparable expansion is attested, in the witnesses cited by modern editors, for Psalm 52 LXX (= MT 53).</li>
+              <li>Later scribes saw Paul's catena alongside <em>this</em> psalm, not its doublet.</li>
             </ul>
           </div>
         </div>
 
         <p class="ha-verdict">
-          <strong>Verdict:</strong> Paul is on <em>Psalm 14</em> (LXX 13). χρηστότητα is the LXX 13 reading; the LXX 52 doublet has ἀγαθόν instead. And the secondary expansion in Psalm 13 LXX — the one that absorbs Paul's catena back into the psalm — appears only in the Psalm 14 branch, never in its twin.
+          <strong>Taken together:</strong> the divine-name pattern, the reworked judgment line, the Greek word Paul uses, and which Greek psalm the catena attaches to in later manuscripts all point the same direction. Paul is most likely drawing on <em>Psalm 14</em> (LXX 13), not its doublet. No single thread is decisive on its own; together they make a strong case.
         </p>
       </div>
     </details>
@@ -188,11 +198,11 @@
   </div>
 </section>
 
-<!-- ═══════════════ CHAPTER 5 — ALIGNMENT (DEPTH) ═══════════════ -->
-<section class="chapter chapter-align depth-only" data-nav="Alignment" data-ch="5">
+<!-- ═══════════════ CHAPTER 5 — ALIGNMENT ═══════════════ -->
+<section class="chapter chapter-align" data-nav="Alignment" data-ch="5">
   <div class="align-stage">
     <div class="align-head">
-      <div class="eyebrow reveal">Depth layer · Phrase by phrase</div>
+      <div class="eyebrow reveal">Phrase by phrase</div>
       <h2 class="reveal">Every borrowed phrase, in five columns.</h2>
       <p class="reveal">Pick any phrase. Compare Paul's Greek against the Greek source, the Hebrew source, and the Psalm 14 traditions that don't contain it.</p>
     </div>
@@ -247,7 +257,7 @@
     </div>
 
     <div class="tell-divider reveal" data-delay="500">
-      <span class="tell-divider-lbl">and another — this one decides <em>which</em> psalm</span>
+      <span class="tell-divider-lbl">and another — this one points to <em>which</em> psalm</span>
     </div>
 
     <div class="tell-sub reveal" data-delay="600">
@@ -285,7 +295,7 @@
     </div>
 
     <p class="tell-tail reveal">
-      One word isn't proof. But across the catena, Paul's wording tracks the Greek often enough that a Greek text form is the simplest explanation.
+      One word isn't decisive on its own. But across the catena, Paul's wording tracks the Greek often enough that a Greek text form is the simplest explanation for what he has in front of him.
     </p>
   </div>
 </section>
@@ -296,7 +306,7 @@
     <div class="ba-head">
       <div class="eyebrow reveal">The payoff</div>
       <h2 class="reveal">And then Paul's catena flowed <em>back</em> into the Psalm.</h2>
-      <p class="reveal">On the left: Paul's paragraph. On the right: what some later Greek manuscripts of Psalm 13(14) contain. Press <em>play</em> — watch each borrowed line leave Paul and arrive in the psalm.</p>
+      <p class="reveal">On the left: Paul's paragraph. On the right: what some later Greek manuscripts of Psalm 13(14) contain. Watch each borrowed line leave Paul and arrive in the psalm.</p>
     </div>
 
     <div class="ba-controls reveal" data-delay="200">
@@ -335,9 +345,51 @@
 
     <p class="ba-explain reveal">
       Every line that lands in the expanded Psalm is a phrase from <em>Paul</em> — Psalms 5, 140, 10, Isaiah 59, Psalm 36.
-      Critical editors judge this expansion secondary. The simplest explanation: later scribes, familiar with Romans,
-      wrote Paul's catena back into the margins of the Psalter, and from there it entered the text.
+      Critical editors judge this expansion secondary. The most plausible explanation: later scribes, familiar with Romans, wrote Paul's catena back into the margins of the Psalter, and from there it entered the text. The witnesses themselves split on it — some preserve the short form, some the long, and one of the very oldest preserves the long form but flags it as foreign to the psalm.
     </p>
+
+    <!-- What the codices show -->
+    <div class="codices reveal" data-delay="200">
+      <div class="codices-head">
+        <div class="eyebrow">What the codices show</div>
+        <h3>The witnesses disagree — and one of them flags the passage itself.</h3>
+        <p>Four of the most important Greek Psalter witnesses split on whether these lines belong to Psalm 13. The disagreement is itself evidence.</p>
+      </div>
+
+      <div class="codices-grid">
+        <div class="codex-card codex-has">
+          <div class="codex-era">4th c.</div>
+          <div class="codex-name">Codex Sinaiticus <span class="codex-sigil">ℵ</span></div>
+          <div class="codex-state">Has the expansion — inline</div>
+          <p class="codex-body">The earliest surviving continuous Greek Psalter treats the expansion as part of Psalm 13 itself. The catena sits in the body of the text, indistinguishable from the rest of the psalm.</p>
+        </div>
+
+        <div class="codex-card codex-margin">
+          <div class="codex-era">4th c.</div>
+          <div class="codex-name">Codex Vaticanus <span class="codex-sigil">B</span></div>
+          <div class="codex-state">Has the expansion — in the margin, with a note</div>
+          <p class="codex-body">Vaticanus preserves the same lines, but not in the psalm's body. They are written in the margin alongside Psalm 13 — with a scribal note observing that the lines are foreign to the Psalter.</p>
+          <figure class="codex-quote">
+            <blockquote lang="la">nusquam exstant in Psalmis; undenam vero Apostolus excerpserit eos quærendum est.</blockquote>
+            <figcaption>"These lines appear nowhere in the Psalms; where the Apostle took them from must be a subject of inquiry." <span class="codex-quote-attr">— marginal scribal note, Codex Vaticanus (reproduced in Montfaucon, <em>Hexapla</em>, 1713, vol. I, p. 492).</span></figcaption>
+          </figure>
+        </div>
+
+        <div class="codex-card codex-short">
+          <div class="codex-era">5th c.</div>
+          <div class="codex-name">Codex Alexandrinus <span class="codex-sigil">A</span></div>
+          <div class="codex-state">Short form — no expansion</div>
+          <p class="codex-body">Alexandrinus preserves Psalm 13 without the catena — the shorter form that matches the Hebrew. The Lucianic recension likewise transmits the short text.</p>
+        </div>
+
+        <div class="codex-card codex-short">
+          <div class="codex-era">Modern</div>
+          <div class="codex-name">Rahlfs–Hanhart</div>
+          <div class="codex-state">Prints the short form as original</div>
+          <p class="codex-body">The standard critical edition of the Septuagint prints the short form in the body, relegating the expansion to the apparatus and explicitly tying it to Romans 3:13–18.</p>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -378,7 +430,7 @@
     <div class="src-note reveal">
       <div class="eyebrow">A note on certainty</div>
       <p>
-        Some claims here are directly documented in surviving manuscripts and critical apparatuses — these are shown without hedging. Others are scholarly judgments most text critics accept but which rest on inference. Where the argument depends on indirect inference — because no pre-Pauline Greek manuscript of Psalm 13/14 survives — that gap is named, not hidden.
+        Some claims here are directly documented in surviving manuscripts and critical apparatuses — these are shown without hedging. Others are scholarly judgments most text critics accept but which rest on inference. One gap is named, not hidden: no Greek manuscript of Psalm 13/14 survives from before Paul, so the direction-of-influence argument turns on later evidence rather than a dated pre-Pauline witness. The Vaticanus marginal note is itself a piece of that later evidence — an ancient scribe, centuries after Paul, already treating the expansion as foreign to the psalm.
       </p>
     </div>
 
