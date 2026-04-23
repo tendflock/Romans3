@@ -85,7 +85,6 @@ Do not add scroll-driven animation, parallax, or entrance animations beyond the 
 ├── styles.css              ← full stylesheet
 ├── chapter-palettes.css    ← per-chapter background/ink overrides
 ├── STYLE.md                ← this file
-├── CLAUDE.md               ← AI-assistant entrypoint (points here)
 ├── README.md               ← repo intro
 └── LICENSE
 ```
