@@ -79,8 +79,7 @@ Do not add scroll-driven animation, parallax, or entrance animations beyond the 
 
 ```
 /
-├── index.html              ← mirror of "Romans 3 Textual.html" (always keep in sync)
-├── Romans 3 Textual.html   ← canonical markup
+├── index.html              ← the page
 ├── data.js                 ← content model (single source of truth)
 ├── app.js                  ← all rendering + interaction
 ├── styles.css              ← full stylesheet
@@ -112,7 +111,7 @@ The helpers `$`, `$$`, `setCssVars`, and `state` are defined at the top. Reuse t
 
 ### 4.3 HTML
 
-Both `index.html` and `Romans 3 Textual.html` must stay byte-for-byte identical. `index.html` is the GitHub Pages entry; the named file is the canonical one. When you change one, copy it over the other before committing.
+`index.html` is the single canonical markup file and the GitHub Pages entry.
 
 ### 4.4 CSS
 
@@ -122,7 +121,7 @@ Both `index.html` and `Romans 3 Textual.html` must stay byte-for-byte identical.
 
 ## 5. Adding a new chapter
 
-1. Add a `<section class="chapter chapter-XXX" data-nav="Short label" data-ch="N">` to both HTML files. `data-ch` is 1-indexed and must match the section's position in the arc.
+1. Add a `<section class="chapter chapter-XXX" data-nav="Short label" data-ch="N">` to `index.html`. `data-ch` is 1-indexed and must match the section's position in the arc.
 2. If the chapter renders dynamic content, add a mount point (`<div id="xxx">`) and a `render<Xxx>()` function in `app.js` called from `init()`.
 3. If the chapter introduces new content, extend `data.js` with a new top-level key. Do not inline content in `app.js`.
 4. Add chapter-scoped color in `chapter-palettes.css` if the chapter needs a distinct background.
@@ -133,7 +132,6 @@ Both `index.html` and `Romans 3 Textual.html` must stay byte-for-byte identical.
 ## 6. DOs and DON'Ts
 
 **DO**
-- Keep `index.html` and `Romans 3 Textual.html` identical.
 - Read the source from the `sources` map — don't hard-code color or label.
 - Write English glosses yourself. Short. Close to the original.
 - Name confidence tiers on every claim (`documented` / `strong-judgment` / `noted-gap`).
@@ -148,7 +146,6 @@ Both `index.html` and `Romans 3 Textual.html` must stay byte-for-byte identical.
 - Don't add scroll-driven animation beyond what's already in the hinge thread and back-absorption.
 - Don't add new source books without a real textual reason and a manuscript reference.
 - Don't remove the "noted gap" disclaimer (no pre-Pauline Greek MS of Psalm 13/14 survives).
-- Don't let `index.html` drift from `Romans 3 Textual.html`.
 
 ---
 
@@ -156,9 +153,8 @@ Both `index.html` and `Romans 3 Textual.html` must stay byte-for-byte identical.
 
 Before committing:
 
-1. Open `Romans 3 Textual.html` locally. No console errors.
+1. Open `index.html` locally. No console errors.
 2. Scroll the whole document. Every chapter renders. Nav dots on the left rail update as you scroll.
 3. Hover a phrase in the mosaic (Ch. 4). English appears below. Click it. Drawer opens with Greek and Hebrew sources.
 4. Scroll to the back-absorption chapter (Ch. 7). Connector curves draw one by one; absorbed lines appear below the short-form Psalm.
 5. Timeline dates all read BC / AD.
-6. `index.html` byte-for-byte matches `Romans 3 Textual.html`.

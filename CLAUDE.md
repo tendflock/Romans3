@@ -10,7 +10,6 @@ Key reminders (the full rules are in `STYLE.md`):
 - **Content lives in `data.js`.** `app.js` renders it; HTML provides mount points. Don't inline content in `app.js` or the HTML.
 - **Color comes from `oklch()` via the `sources` map in `data.js`.** Don't hard-code hex.
 - **Type stack is fixed:** Source Serif 4 (English), Gentium Plus (Greek), Frank Ruhl Libre (Hebrew). Don't introduce a fourth face.
-- **Keep `index.html` and `Romans 3 Textual.html` byte-for-byte identical.** Whenever you change one, overwrite the other before committing.
 - **Confidence tiers** (`documented`, `strong-judgment`, `noted-gap`) are named on every claim. Don't quietly upgrade a "noted gap" into a fact.
 - **Motion is argumentative, not decorative.** Three motion moments exist — hinge thread, mosaic hover, back-absorption autoplay. Don't add scroll-driven animation, parallax, or entrance effects beyond the established `.reveal` fade.
 
