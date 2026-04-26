@@ -90,6 +90,7 @@
 .chapter-hinge .hinge-foot { color: oklch(0.72 0.03 265); }
 .chapter-hinge .hinge-h { color: oklch(0.98 0.01 265); }
 .chapter-hinge .hinge-h em { color: oklch(0.82 0.11 70); }
+.chapter-hinge .hinge-foot em { color: oklch(0.82 0.11 70); font-style: italic; }
 .chapter-hinge .hinge-dek { color: oklch(0.82 0.015 265); }
 /* lift the thread above the dark bg */
 .chapter-hinge .hinge-thread {
@@ -107,7 +108,50 @@
 .chapter-hinge .hinge-aside .ha-content { color: oklch(0.88 0.015 265); }
 .chapter-hinge .hinge-aside .ha-content em { color: oklch(0.95 0.01 265); }
 .chapter-hinge .hinge-aside .ha-lede { color: oklch(0.88 0.015 265); }
-.chapter-hinge .hinge-aside .ha-verdict { color: oklch(0.95 0.01 265); }
+
+/* Hinge "library" column header — sits directly on the indigo bg */
+.chapter-hinge .hinge-thread .ht-col-eyebrow { color: oklch(0.72 0.03 265); }
+.chapter-hinge .hinge-thread .ht-col-title   { color: oklch(0.97 0.01 265); }
+.chapter-hinge .hinge-thread .ht-col-sub     { color: oklch(0.78 0.025 265); }
+
+/* Hinge aside compare-grid — re-skin all inner cells for dark plaque.
+   Default styles use --ink / --bg-2 (cream + near-black) which vanish here. */
+.chapter-hinge .hinge-aside .ha-compare {
+  border-color: oklch(0.34 0.04 265 / 0.55);
+}
+.chapter-hinge .hinge-aside .ha-col {
+  border-bottom-color: oklch(0.34 0.04 265 / 0.45);
+}
+.chapter-hinge .hinge-aside .ha-col + .ha-col {
+  border-left-color: oklch(0.34 0.04 265 / 0.45);
+}
+.chapter-hinge .hinge-aside .ha-col-head,
+.chapter-hinge .hinge-aside .ha-rowlabel {
+  background: oklch(0.26 0.04 265 / 0.55);
+}
+.chapter-hinge .hinge-aside .ha-rowlabel + .ha-rowlabel {
+  border-top-color: oklch(0.34 0.04 265 / 0.45);
+}
+.chapter-hinge .hinge-aside .ha-ps-title { color: oklch(0.97 0.01 265); }
+.chapter-hinge .hinge-aside .ha-ps-sub   { color: oklch(0.74 0.025 265); }
+.chapter-hinge .hinge-aside .ha-lang     { color: oklch(0.92 0.015 265); }
+.chapter-hinge .hinge-aside .ha-lang-note { color: oklch(0.72 0.025 265); }
+.chapter-hinge .hinge-aside .ha-textcol .ha-src-ref { color: oklch(0.70 0.04 265); }
+.chapter-hinge .hinge-aside .ha-text     { color: oklch(0.96 0.01 265); }
+.chapter-hinge .hinge-aside .ha-en       { color: oklch(0.80 0.02 265); }
+.chapter-hinge .hinge-aside .ha-en em    { color: oklch(0.92 0.015 265); }
+.chapter-hinge .hinge-aside .ha-diffcell ul { color: oklch(0.86 0.015 265); }
+.chapter-hinge .hinge-aside .ha-diffcell strong { color: oklch(0.96 0.01 265); }
+.chapter-hinge .hinge-aside .ha-diffcell em { color: oklch(0.95 0.01 265); }
+
+/* Verdict callout — dark plaque variant */
+.chapter-hinge .hinge-aside .ha-verdict {
+  background: oklch(0.26 0.04 265 / 0.55);
+  border-left-color: oklch(0.82 0.11 70);
+  color: oklch(0.95 0.01 265);
+}
+.chapter-hinge .hinge-aside .ha-verdict strong { color: oklch(0.82 0.11 70); }
+.chapter-hinge .hinge-aside .ha-verdict em { color: oklch(0.97 0.01 265); }
 
 /* =========================================================================
    CH 4 — MOSAIC · bright paper white. Editorial spread. Color pops.
