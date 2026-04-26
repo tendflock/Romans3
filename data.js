@@ -19,10 +19,10 @@ window.CATENA_DATA = {
       id: "p1",
       verse: "3:10",
       source: "ps14",
-      tag: "direct",
+      tag: "framing",
       greek: "οὐκ ἔστιν δίκαιος οὐδὲ εἷς",
       english: "There is no one righteous, not even one",
-      note: "Paul's opening. Shaped by Psalm 14's indictment, though this exact wording is Paul's framing of it.",
+      note: "Paul's opening thesis. The line is not a verbatim LXX quotation; it frames the Psalm 14 block and may echo Ecclesiastes 7:20's 'there is not a righteous man' wording.",
       sourceLxx: {
         ref: "Ps 13(14):1 LXX",
         greek: "οὐκ ἔστιν ποιῶν χρηστότητα, οὐκ ἔστιν ἕως ἑνός",
@@ -285,7 +285,7 @@ window.CATENA_DATA = {
     {
       era: "c. AD 57",
       label: "Paul writes Romans",
-      body: "In Romans 3:10–18, Paul opens with Psalm 14 and then stitches in Psalms 5, 140, 10, Isaiah 59, and Psalm 36 to form one sustained indictment."
+      body: "In Romans 3:10–18, Paul opens with a framing thesis, moves through Psalm 14, and then stitches in Psalms 5, 140, 10, Isaiah 59, and Psalm 36 to form one sustained indictment."
     },
     {
       era: "3rd c. AD",

@@ -1,14 +1,14 @@
 # Romans 3:10–18 — A Textual Journey
 
-An interactive, long-scroll study of the catena in Romans 3:10–18 — the paragraph where Paul stitches together quotations from six different Old Testament texts to form one sustained indictment.
+An interactive, long-scroll study of Romans 3:10–18 — the paragraph where Paul frames the charge and stitches together quotations from six different Old Testament texts to form one sustained indictment.
 
 The piece walks through:
 
 - **The paragraph itself**, broken into eleven phrases, each color-coded by source
-- **The hinge** at verse 13, where Paul leaves Psalm 14 and begins braiding in five more texts (Psalms 5, 140, 10, 36, and Isaiah 59) — with a collapsible side-by-side comparison of Psalm 14 and its near-twin Psalm 53
-- **The mosaic**, showing how each line maps to its source text in Hebrew and Greek
-- **A single-word diagnostic** (χρηστότητα) that pins Paul to the Septuagint rather than the Hebrew
-- **The back-absorption** — how Paul's catena was later absorbed back into the Psalter itself, producing the expanded form of LXX Psalm 13 found in Codex Alexandrinus and carried into Jerome's Vulgate
+- **The hinge** at verse 13, where Paul leaves the Psalm 14 block and begins braiding in five more texts (Psalms 5, 140, 10, 36, and Isaiah 59) — with a collapsible side-by-side comparison of Psalm 14 and its near-twin Psalm 53
+- **The mosaic**, showing how Paul's phrases relate to source texts in Hebrew and Greek
+- **A single-word diagnostic** (χρηστότητα) that points toward Psalm 13 LXX rather than Psalm 52 or the Hebrew wording
+- **The back-absorption** — how Paul's catena was later absorbed back into the Psalter itself, producing the expanded form of LXX Psalm 13 found inline in Codex Sinaiticus and carried into Jerome's Gallican Psalter
 - **A textual timeline** from the original Hebrew through the Septuagint, the great codices, Jerome, and modern critical editions
 
 ## Viewing the site
